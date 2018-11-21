@@ -14,8 +14,9 @@ from checks import generator
 from checks import html_head
 from checks import http_and_https
 from checks import hyperlinks
-from checks import page_content
 from checks import load_in_browser
+from checks import page_content
+from checks import textual_content
 from checks import url_reachability
 from checks import url_canonicalization
 
@@ -42,6 +43,7 @@ def perform_checks(input_url):
         ('charset', charset),
         ('html_head', html_head),
         ('hyperlinks', hyperlinks),
+        ('textual_content', textual_content),
         ('generator', generator),
         ('load_in_browser', load_in_browser),
     ]

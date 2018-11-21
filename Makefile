@@ -34,7 +34,7 @@ export:
 		-v $(PWD)/export-siteicons:/icons \
 		$(IMAGE) \
 		--credentials-path /secrets/datastore-reader.json \
-		--loglevel debug \
+		--loglevel info \
 		export --kind $(DB_ENTITY)
 
 # run spider tests
