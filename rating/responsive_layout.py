@@ -32,6 +32,13 @@ class Rater(AbstractRater):
                 score = self.max_score
                 # we use the first URL found here
                 break
+            
+            # give half a point within a 20% margin of the smallest size
+            if (self.check_results['load_in_browser'][url]['min_document_width'] <=
+                self.check_results['load_in_browser'][url]['sizes'][0]['viewport_width'] * 1.2):
+                value = True
+                score = self.max_score * 0.5
+                break
 
         return {
             'type': self.rating_type,
